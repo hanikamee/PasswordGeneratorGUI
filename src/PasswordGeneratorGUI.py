@@ -14,7 +14,7 @@ import pyperclip
 
 class Password_GUI:
     # Constructor
-    def __init__(self):
+    def __init__(self) -> None:
         self.root = tk.Tk()
         self.set_window_properties()
         self.root.resizable(0, 0)  # Will make the GUI not resizable
@@ -29,16 +29,18 @@ class Password_GUI:
         self.set_frame9()
 
     # Starts the GUI
-    def start(self):
+    def start(self) -> None:
         self.root.mainloop()
-
-    def set_window_properties(self):
+        
+    def set_window_properties(self) -> None:
         self.root.geometry("500x300")
         self.root.title("Password Generator")
         self.root["bg"] = "#334854"  # Background color
+        brand_logo=tk.PhotoImage(file="C:\\Users\\haniy\\OneDrive\Pictures\\logobrand.png")
+        self.root.iconphoto(True, brand_logo)
 
     # Frames enable the organization of GUI
-    def set_frame1(self):
+    def set_frame1(self) -> None:
         self.frame1 = tk.Frame(self.root)
 
         self.password_label = tk.Label(
@@ -49,7 +51,7 @@ class Password_GUI:
         self.password_entry = tk.Entry(self.root)
         self.password_entry.pack(side=tk.TOP, pady=(15, 0))
 
-    def set_frame2(self):
+    def set_frame2(self) -> None:
         self.frame2 = tk.Frame(self.root)
 
         self.lower_label = tk.Label(
@@ -63,7 +65,7 @@ class Password_GUI:
         self.lower_entry = tk.Entry(self.root)
         self.lower_entry.pack(pady=(9, 0))
 
-    def set_frame3(self):
+    def set_frame3(self) -> None:
         self.frame3 = tk.Frame(self.root)
 
         self.upper_label = tk.Label(
@@ -77,7 +79,7 @@ class Password_GUI:
         self.upper_entry = tk.Entry(self.root)
         self.upper_entry.pack(pady=(9, 0))
 
-    def set_frame4(self):
+    def set_frame4(self) -> None:
         self.frame4 = tk.Frame(self.root)
 
         self.digits_label = tk.Label(
@@ -87,7 +89,7 @@ class Password_GUI:
         self.digits_entry = tk.Entry(self.root)
         self.digits_entry.pack(pady=(9, 0))
 
-    def set_frame5(self):
+    def set_frame5(self) -> None:
         self.frame5 = tk.Frame(self.root)
 
         self.symbols_label = tk.Label(
@@ -98,7 +100,7 @@ class Password_GUI:
         self.symbols_entry = tk.Entry(self.root)
         self.symbols_entry.pack(pady=(9, 0))
 
-    def set_frame6(self):
+    def set_frame6(self) -> None:
         self.set_frame6 = tk.Frame(self.root)
 
         self.generate_label = tk.Label(
@@ -112,7 +114,7 @@ class Password_GUI:
         self.generated_entry = tk.Entry(self.root)
         self.generated_entry.pack(pady=(25, 0))
 
-    def set_frame7(self):
+    def set_frame7(self) -> None:
         self.frame7 = tk.Frame(self.root)
         self.password_button = tk.Button(
             self.root,
@@ -124,7 +126,7 @@ class Password_GUI:
         )
         self.password_button.pack(pady=(7, 0))
 
-    def set_frame8(self):
+    def set_frame8(self) -> None:
         self.frame8 = tk.Frame(self.root)
         self.copy_button = tk.Button(
             self.root,
@@ -136,7 +138,7 @@ class Password_GUI:
         )
         self.copy_button.pack(pady=(7, 0))
 
-    def set_frame9(self):
+    def set_frame9(self) -> None:
         self.frame9 = tk.Frame(self.root)
         self.reset_button = tk.Button(
             self.root,
@@ -251,7 +253,7 @@ class Password_GUI:
         pyperclip.copy(self.generated_entry.get())
 
     # Method to reset the entry boxes
-    def reset(self):
+    def reset(self) -> None:
         self.password_entry.delete(0, "end")
         self.upper_entry.delete(0, "end")
         self.lower_entry.delete(0, "end")
